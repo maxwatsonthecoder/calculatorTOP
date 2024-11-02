@@ -1,0 +1,49 @@
+/* align main axis. justify cross axis */
+
+#container {
+    border: 5px solid black;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+button {
+    width: 75px;
+    height: 75px;
+}
+
+#display {
+    display: flex;
+    outline: 5px solid black;
+    width: 350px;
+    height: 100px;
+    
+}
+
+#options {
+    display: flex;
+    border: 5px solid blue;
+    align-items: flex-start;
+}
+
+#operators {
+    display: flex;
+    border: 5px solid purple;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: -85px;
+}
+
+#numbers {
+    display: flex;
+    flex-wrap: wrap;
+    border: 5px solid red;
+    margin-top: -250px;
+    width: 250px;
+    }
+
+#dec-zero {
+    display: flex;
+    border: 5px solid yellow;
+}
