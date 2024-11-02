@@ -2,24 +2,52 @@ let num1 = "";
 let num2 = "";
 const operator = ["+", "-" , "*", "/"];
 
-const add = function(a, b) {
+const numbersBtns = document.getElementById("numbers");
+
+
+//in progress main function
+numbersBtns.addEventListener("click", (event) => {
+    if (event.target.tagName === "BUTTON") {
+        num1 += event.target.textContent;
+        console.log(`${num1}`);
+    }
+})
+
+
+function add(a, b) {
     return a + b
 };
 
-const subtract = function(a, b) {
+function subtract(a, b) {
     return a - b
 };
 
-const multiply = function(a, b) {
+function multiply(a, b) {
     return a * b
 };
 
-const divide = function(a, b) {
+function divide(a, b) {
     return a / b
 };
 
-const operate = function() {
-
+function operate() {
+    switch (operator) {
+        case "+":
+            return add(num1, num2);
+            break;
+        case "-":
+            return subtract(num1, num2);
+            break;
+        case "*":
+            return multiply(num1, num2);
+            break;
+        case "/":
+            return divide(num1, num2);
+            break;
+    }
 }
 
-//test
+function initiate() {
+    console.log("numbers div clicked!")
+} 
+

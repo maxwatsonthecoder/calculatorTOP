@@ -1,49 +1,87 @@
 /* align main axis. justify cross axis */
 
+body {
+    background-color: #000;
+}
+
+#main-page {
+    display: flex;
+    outline: 5px solid green;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
 #container {
-    border: 5px solid black;
-    width: 350px;
+    outline: 5px solid black;
+    width: 315px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    background-color: #363636;
+    padding: 10px;
 }
 
 button {
     width: 75px;
     height: 75px;
+    border: 2px solid #000;
+    border-radius: 70px;
+    margin: 1px;
+    font-size: 35px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #acacac;
+    text-shadow: 2px 2px 4px #000;
 }
 
 #display {
     display: flex;
     outline: 5px solid black;
-    width: 350px;
+    width: 315px;
     height: 100px;
+    background-color: #c9c9c9;
     
 }
 
 #options {
     display: flex;
-    border: 5px solid blue;
+    outline: 5px solid blue;
     align-items: flex-start;
+}
+#options button {
+    background-color: rgb(1, 104, 104);
 }
 
 #operators {
     display: flex;
-    border: 5px solid purple;
+    outline: 5px solid purple;
     flex-direction: column;
     align-items: flex-end;
-    margin-top: -85px;
+    margin-top: -78px;
+}
+
+#operators button {
+    background-color: rebeccapurple;
 }
 
 #numbers {
     display: flex;
     flex-wrap: wrap;
-    border: 5px solid red;
-    margin-top: -250px;
+    outline: 5px solid red;
+    margin-top: -305px;
     width: 250px;
     }
 
+#numbers button {
+    background-color: #0000c0;
+}
+
 #dec-zero {
     display: flex;
-    border: 5px solid yellow;
+    outline: 5px solid yellow;
+    margin-top: 2px;
+}
+
+#dec-zero button {
+    background-color: #0000c0;
 }
