@@ -68,20 +68,10 @@ button {
     display: flex;
     flex-wrap: wrap;
     outline: 5px solid red;
-    margin-top: -305px;
+    margin-top: -225px;
     width: 250px;
     }
 
 #numbers button {
-    background-color: #0000c0;
-}
-
-#dec-zero {
-    display: flex;
-    outline: 5px solid yellow;
-    margin-top: 2px;
-}
-
-#dec-zero button {
     background-color: #0000c0;
 }
