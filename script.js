@@ -8,6 +8,7 @@ let result = "";
 const numbersBtns = document.getElementById("numbers");
 const operatorsBtns = document.getElementById("operators");
 const equalsBtn = document.getElementById("equals-btn");
+const clearBtn = document.getElementById("clear");
 
 
 numbersBtns.addEventListener("click", (event) => {
@@ -33,6 +34,17 @@ equalsBtn.addEventListener("click", (event) => {
         currentNum = "";
         num1 = result;
         num2 = "";
+    }
+});
+
+clearBtn.addEventListener("click", (event) => {
+    if (event.target.tagName === "BUTTON") {
+        currentNum = "";
+        num1 = "";
+        num2 = "";
+        result = "";
+        operator = null;
+        console.log(`${currentNum}, ${num1}, ${num2}, ${result}`)
     }
 })
 
