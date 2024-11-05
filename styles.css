@@ -1,5 +1,11 @@
 /* align main axis. justify cross axis */
 
+@font-face {
+    font-family: 'Digital-7';
+    src: url(./digital-7/digital-7.ttf);
+}
+
+
 body {
     background-color: #000;
 }
@@ -44,6 +50,9 @@ button {
     width: 315px;
     height: 100px;
     background-color: #c9c9c9;
+    font-family: 'Digital-7', sans-serif;
+    font-size: 80px;
+    text-align: start;
     
 }
 
