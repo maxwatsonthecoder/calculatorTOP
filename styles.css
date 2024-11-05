@@ -96,3 +96,15 @@ button {
 #numbers button {
     background-color: #0000c0;
 }
+
+#dot-equals {
+    position: absolute;
+    outline: 5px solid yellow;
+    bottom: 10px;
+    right: 90px;
+}
+
+#dot-equals button {
+    background-color: #0000c0;
+
+}

@@ -29,12 +29,14 @@ operatorsBtns.addEventListener("click", (event) => {
 });
 
 equalsBtn.addEventListener("click", function() {
+    //if (operator && currentNum) {
         result = operate();
-        console.log(result);
-        currentNum = "";
+        console.log(`equalsbtn is ${result}, and ${num1}`);
         num1 = limitDisplay(result);
-        display.textContent = num1;
+        display.textContent = parseFloat(num1);
+        currentNum = "";
         num2 = "";
+   // }
 });
 
 clearBtn.addEventListener("click", function() {
@@ -43,7 +45,7 @@ clearBtn.addEventListener("click", function() {
         num2 = "";
         result = "";
         operator = null;
-        display.textContent = 0;
+        display.textContent = parseFloat(0);
         console.log(`${currentNum}, ${num1}, ${num2}, ${result}`)
 });
 
@@ -52,15 +54,15 @@ function add(a, b) {
 };
 
 function subtract(a, b) {
-    return a - b
+    return parseFloat(a) - parseFloat(b)
 };
 
 function multiply(a, b) {
-    return a * b
+    return parseFloat(a) * parseFloat(b)
 };
 
 function divide(a, b) {
-    return a / b
+    return parseFloat(a) / parseFloat(b)
 };
 
 function operate() {
@@ -72,7 +74,6 @@ function operate() {
     }
 };
 
-//fn to limit display to 8 characters. Need to add textcontent
 function limitDisplay(num) {
     let displayNum = num.toString();
 
@@ -82,21 +83,20 @@ function limitDisplay(num) {
     return parseFloat(displayNum);
 };
 
-//work in progress main function
 function initiate() {
     if (operator === null) {
         isNum2 = false;
         num1 = limitDisplay(currentNum);
-        display.textContent = num1;
+        display.textContent = parseFloat(num1);
         console.log(`initiate num1 is ${num1}`)
     } else {
         isNum2 = true;
         num2 = limitDisplay(currentNum);
-        display.textContent = num2;
+        display.textContent = parseFloat(num2);
         console.log(`initiate num2 is ${num2}`)
 
     } 
-} 
+}; 
 
 
 
