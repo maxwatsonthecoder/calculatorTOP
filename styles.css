@@ -12,7 +12,6 @@ body {
 
 #main-page {
     display: flex;
-    outline: 5px solid green;
     justify-content: center;
     align-items: center;
     margin: 50px;
@@ -20,7 +19,7 @@ body {
 
 #container {
     position: relative;
-    outline: 5px solid black;
+    border-radius: 7px;
     width: 315px;
     height: 500px;
     display: flex;
@@ -47,12 +46,14 @@ button {
     position: absolute;
     top: 10px;
     outline: 5px solid black;
+    border-radius: 7px;
     width: 315px;
     height: 100px;
     background-color: #c9c9c9;
     font-family: 'Digital-7', sans-serif;
     font-size: 80px;
-    text-align: start;
+    align-items: center;
+    justify-content: end;
     
 }
 
@@ -60,7 +61,7 @@ button {
     position: absolute;
     top: 120px;
     display: flex;
-    outline: 5px solid blue;
+    /* outline: 5px solid blue; */
     align-items: flex-start;
 }
 #options button {
@@ -72,7 +73,7 @@ button {
     bottom: 10px;
     right: 10px;
     display: flex;
-    outline: 5px solid purple;
+    /* outline: 5px solid purple; */
     flex-direction: column;
     align-items: flex-end;
     width: 80px;
@@ -88,7 +89,7 @@ button {
     left: 10px;
     display: flex;
     flex-wrap: wrap;
-    outline: 5px solid red;
+    /* outline: 5px solid red; */
     margin-top: -225px;
     width: 235px;
     }
@@ -99,7 +100,7 @@ button {
 
 #dot-equals {
     position: absolute;
-    outline: 5px solid yellow;
+    /* outline: 5px solid yellow; */
     bottom: 10px;
     right: 90px;
 }

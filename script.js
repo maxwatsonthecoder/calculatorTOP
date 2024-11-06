@@ -29,14 +29,14 @@ operatorsBtns.addEventListener("click", (event) => {
 });
 
 equalsBtn.addEventListener("click", function() {
-    //if (operator && currentNum) {
+    if (operator && currentNum) {
         result = operate();
         console.log(`equalsbtn is ${result}, and ${num1}`);
         num1 = limitDisplay(result);
         display.textContent = parseFloat(num1);
         currentNum = "";
         num2 = "";
-   // }
+    }
 });
 
 clearBtn.addEventListener("click", function() {
@@ -100,6 +100,5 @@ function initiate() {
 
 
 
-//need = to not be counted as a number.
-//limit decimal to once per number. 
-//Make negative clear and % buttons work.
+//make functional then limit decimal to once per number. 
+//Make negative and % buttons work.
