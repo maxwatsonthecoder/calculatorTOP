@@ -9,6 +9,9 @@ const numbersBtns = document.getElementById("numbers");
 const operatorsBtns = document.getElementById("operators");
 const equalsBtn = document.getElementById("equals-btn");
 const clearBtn = document.getElementById("clear");
+const decimalBtn = document.getElementById("decimal-btn");
+const percentBtn = document.getElementById("percent-btn");
+const negativeBtn = document.getElementById("negative-btn");
 const display = document.getElementById("display");
 
 
@@ -48,6 +51,23 @@ clearBtn.addEventListener("click", function() {
         display.textContent = parseFloat(0);
         console.log(`${currentNum}, ${num1}, ${num2}, ${result}`)
 });
+
+decimalBtn.addEventListener("click", function() {
+    if (!currentNum.includes(".")) {
+        currentNum += ".";
+    }
+});
+
+percentBtn.addEventListener("click", function() {
+    currentNum *= 0.01;
+    initiate();
+    console.log(`percent button clicked. currentNum is ${currentNum}`)
+});
+
+negativeBtn.addEventListener("click", function() {
+    currentNum *= (-1);
+    initiate();
+})
 
 function add(a, b) {
     return parseFloat(a) + parseFloat(b)
