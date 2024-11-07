@@ -18,7 +18,6 @@ const display = document.getElementById("display");
 numbersBtns.addEventListener("click", (event) => {
     if (event.target.tagName === "BUTTON") {
         currentNum += event.target.textContent;
-        console.log(`numbersBtn currentNum is ${currentNum}`);
         initiate();
     }
 });
@@ -27,17 +26,14 @@ operatorsBtns.addEventListener("click", (event) => {
     if (event.target.tagName === "BUTTON") {
         if (operator === null) {
             operator = event.target.textContent;
-            console.log(`operator is ${operator}`);
             currentNum = "";  
         } else {
-            console.log(`operatorsBtn num1 is ${num1} num2 is${num2}`);
             result = operate();
             operator = event.target.textContent;
             num1 = limitDisplay(result);
             display.textContent = parseFloat(num1) + operator;
             currentNum = "";
             num2 = "";
-            console.log(`${result} 2nd+ operator is ${operator}`);        
         }
     }
 });
@@ -45,12 +41,11 @@ operatorsBtns.addEventListener("click", (event) => {
 equalsBtn.addEventListener("click", function() {
     if (operator && currentNum) {
         result = operate();
-        console.log(`equalsbtn is ${result}, and ${num1}`);
         num1 = limitDisplay(result);
         display.textContent = parseFloat(num1);
         currentNum = "";
         num2 = "";
-        operator = null; //debugging
+        operator = null; 
     }
 });
 
@@ -61,7 +56,6 @@ clearBtn.addEventListener("click", function() {
         result = "";
         operator = null;
         display.textContent = parseFloat(0);
-        console.log(`${currentNum}, ${num1}, ${num2}, ${result}`)
 });
 
 decimalBtn.addEventListener("click", function() {
@@ -75,17 +69,13 @@ percentBtn.addEventListener("click", function() {
         currentNum *= 0.01
         initiate();
     };
-    console.log(`percent button clicked. currentNum is ${currentNum}`)
 });
 
 negativeBtn.addEventListener("click", function() {
     if (currentNum !== "") {
         currentNum *= (-1);
         initiate(); 
-    } //else {
-    
-    // }
-     console.log(`neg btn clicked currentNum is ${currentNum}`);
+    }
  });
 
 function add(a, b) {
@@ -127,13 +117,10 @@ function initiate() {
         isNum2 = false;
         num1 = limitDisplay(currentNum);
         display.textContent = parseFloat(num1);
-        console.log(`initiate num1 is ${num1}`)
     } else {
         isNum2 = true;
         num2 = limitDisplay(currentNum);
         display.textContent = parseFloat(num2);
-        console.log(`initiate num2 is ${num2}`)
-
     } 
 }; 
 
