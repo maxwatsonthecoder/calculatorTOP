@@ -18,16 +18,27 @@ const display = document.getElementById("display");
 numbersBtns.addEventListener("click", (event) => {
     if (event.target.tagName === "BUTTON") {
         currentNum += event.target.textContent;
-        console.log(`currentNum is ${currentNum}`);
+        console.log(`numbersBtn currentNum is ${currentNum}`);
         initiate();
     }
 });
 
 operatorsBtns.addEventListener("click", (event) => {
     if (event.target.tagName === "BUTTON") {
-        operator = event.target.textContent;
-        console.log(`operator is ${operator}`);
-        currentNum = "";
+        if (operator === null) {
+            operator = event.target.textContent;
+            console.log(`operator is ${operator}`);
+            currentNum = "";  
+        } else {
+            console.log(`operatorsBtn num1 is ${num1} num2 is${num2}`);
+            result = operate();
+            operator = event.target.textContent;
+            num1 = limitDisplay(result);
+            display.textContent = parseFloat(num1) + operator;
+            currentNum = "";
+            num2 = "";
+            console.log(`${result} 2nd+ operator is ${operator}`);        
+        }
     }
 });
 
@@ -39,6 +50,7 @@ equalsBtn.addEventListener("click", function() {
         display.textContent = parseFloat(num1);
         currentNum = "";
         num2 = "";
+        operator = null; //debugging
     }
 });
 
@@ -59,15 +71,22 @@ decimalBtn.addEventListener("click", function() {
 });
 
 percentBtn.addEventListener("click", function() {
-    currentNum *= 0.01;
-    initiate();
+    if (currentNum !== "") {
+        currentNum *= 0.01
+        initiate();
+    };
     console.log(`percent button clicked. currentNum is ${currentNum}`)
 });
 
 negativeBtn.addEventListener("click", function() {
-    currentNum *= (-1);
-    initiate();
-})
+    if (currentNum !== "") {
+        currentNum *= (-1);
+        initiate(); 
+    } //else {
+    
+    // }
+     console.log(`neg btn clicked currentNum is ${currentNum}`);
+ });
 
 function add(a, b) {
     return parseFloat(a) + parseFloat(b)
@@ -119,6 +138,4 @@ function initiate() {
 }; 
 
 
-
-//make functional then limit decimal to once per number. 
-//Make negative and % buttons work.
+//add divide by 0 stop fn
